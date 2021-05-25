@@ -1,9 +1,14 @@
 <%= form_for(task) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-  <%= f.label :completed %>
-  <%= f.check_box :completed %>
+  <div class="form-group d-flex align-items-center">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control ml-5"%>
+  </div>
+  <div class="form-group d-flex align-items-center">
+    <%= f.label :details %>
+    <%= f.text_field :details, class: "form-control ml-5"%>
+  </div>
+  <div class="form-group">
+    <%= f.check_box :completed, class: "form-control" %>
+  </div>
   <%= f.submit %>
 <% end %>
