@@ -1,0 +1,16 @@
+<h3><%= @task.title %></h3>
+
+<div class="row">
+  <div class="m-3"><%= link_to 'Home', tasks_path %></div>
+  <div class="m-3"><%= link_to 'Update', edit_task_path %></div>
+</div>
+<div class="alert alert-dark" role="alert">
+  <%= @task.details %>
+</div>
+
+
+<% if @task.completed %>
+  <i class="far fa-check-square">This task is completed</i>
+<% else %>
+  <i class="far fa-square">This task is not completed</i>
+<% end %>

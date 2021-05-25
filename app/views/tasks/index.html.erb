@@ -1,0 +1,15 @@
+<h1>My tasks</h1>
+
+<div class="p-3 m-4 border-bottom">
+  <% @tasks.each do |task| %>
+    <div class="row align-items-center">
+      <i class="far fa-check-square"></i>
+      <div class="mx-3">
+        <%= link_to task.title, task_path(task) %>
+      </div>
+      <%= link_to '🗑',  task_path(task), method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to '+ Add a new task', tasks_new_path %>
